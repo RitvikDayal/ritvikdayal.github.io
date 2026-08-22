@@ -914,6 +914,10 @@
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
+  // the brand's visibility depends on viewport width as well as scroll
+  // position, so a rotation or window resize while scrolled down would
+  // otherwise leave it stuck hidden until the next scroll event
+  window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
 })();
 </script>
