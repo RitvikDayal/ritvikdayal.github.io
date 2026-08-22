@@ -1,196 +1,771 @@
-﻿<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Ritvik Dayal - Portfolio</title>
-	<meta title="Ritvik Dayal" />
-	<meta description="An enthusiastic programmer that loves to solve problems by coding them. I like to find patterns in things that make me a self-motivated Data Analyst."/>							
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ritvik Dayal — Senior Software Engineer</title>
+<meta name="description" content="Ritvik Dayal - senior software engineer in Noida. AI agent platforms, distributed backends and browser-based 3D BIM. Seven layers between a tap and an answer; I hold up the middle five.">
+<meta name="author" content="Ritvik Dayal">
+<link rel="canonical" href="https://ritvikdayal.github.io/">
+<meta name="theme-color" content="#05070a">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ritvik Dayal — Senior Software Engineer">
+<meta property="og:description" content="Ritvik Dayal - senior software engineer in Noida. AI agent platforms, distributed backends and browser-based 3D BIM. Seven layers between a tap and an answer; I hold up the middle five.">
+<meta property="og:url" content="https://ritvikdayal.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%2305070a'/%3E%3Crect x='120' y='120' width='160' height='160' fill='none' stroke='%237fe3ff' stroke-width='18'/%3E%3Crect x='152' y='152' width='96' height='96' fill='none' stroke='%23ffb26b' stroke-width='15'/%3E%3Ctext x='200' y='232' text-anchor='middle' font-family='monospace' font-size='120' font-weight='700' fill='%23eef3f7'%3ERD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="importmap">
+{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}
+</script>
+<style>
+  html { background: #05070a; scroll-behavior: smooth; }
+  body { margin: 0; padding: 0; background: #05070a; overscroll-behavior-y: none; }
+  /* hero layer labels are absolutely positioned and spill past narrow viewports; clip does not create a scroll container, so position: sticky in the career section still works */
+  html, body { overflow-x: clip; }
+  a { color: #7fe3ff; text-decoration: none; transition: color 0.25s; }
+  a:hover { color: #ffffff; }
+  @keyframes uthBlink { 0%, 45% { opacity: 1 } 50%, 100% { opacity: 0.12 } }
+  @keyframes uthDrift { 0% { transform: translateY(0) } 50% { transform: translateY(7px) } 100% { transform: translateY(0) } }
+  @keyframes uthGrain { 0% { transform: translate3d(0,0,0) } 25% { transform: translate3d(-2%,1%,0) } 50% { transform: translate3d(1%,-2%,0) } 75% { transform: translate3d(-1%,-1%,0) } 100% { transform: translate3d(0,0,0) } }
+  @keyframes uthWipe { from { opacity: 0; transform: translateY(22px) scale(0.985) } to { opacity: 1; transform: none } }
+  [data-uth-started="1"] [data-hint] { opacity: 0 !important; }
+</style>
+<script>window.__UTH_CONFIG = { grain: 0.055, speed: 1, labels: true };</script>
+<script type="module" src="./hero-engine.js"></script>
+<script type="module" src="./career-engine.js"></script>
 </head>
-	<body class="is-preload">
+<body>
+<div style="position: relative; width: 100%; background: #05070a; color: #eef3f7; font-family: Archivo, system-ui, sans-serif;">
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">Ritvik Dayal</a></h1>
-					<p>
-						The first 90% of the code accounts for the first 90% of the development time.<br />
-						The remaining 10% of the code accounts for the other 90% of the development time
-					</p>
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#two">Things I Can Do</a></li>
-						<li><a href="#three">My Work Collection</a></li>
-						<li><a href="#four">Contact</a></li>
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="https://twitter.com/ritvikr98" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://github.com/RitvikDayal" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="mailto:ritvikr1605@gmail.com?Subject=Contacting%20Through%20the%20Portfolio" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
+  <div style="position: fixed; inset: -10%; pointer-events: none; z-index: 60; background-image: url(./noise.png); background-repeat: repeat; opacity: 0.42; mix-blend-mode: screen; animation: uthGrain 0.9s steps(3) infinite;"></div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <div style="position: fixed; left: 0; right: 0; top: 0; height: 2px; z-index: 55; pointer-events: none;">
+    <div data-page-bar style="height: 100%; width: 100%; transform-origin: left; transform: scaleX(0); background: linear-gradient(90deg, #7fe3ff, #ffb26b);"></div>
+  </div>
 
-				<!-- Main -->
-					<div id="main">
+  <div style="position: fixed; left: 40px; top: 34px; z-index: 50; display: flex; align-items: center; gap: 13px; mix-blend-mode: difference;">
+    <span style="width: 7px; height: 7px; background: #7fe3ff; animation: uthBlink 2.4s steps(1) infinite;"></span>
+    <span style="font: 500 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; text-transform: uppercase; color: #eef3f7;">Ritvik Dayal</span>
+    <span style="width: 1px; height: 11px; background: rgba(238,243,247,0.3);"></span>
+    <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(238,243,247,0.55);">Senior Software Engineer</span>
+  </div>
 
-						<!-- One -->
-							<section id="one">
-								<div class="image main" data-position="center">
-									<img src="images/banner.png" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Resume</h2>
-										<p>An enthusiastic programmer that loves to solve problems by coding them. I like to find patterns in things that make me a self-motivated Data Analyst.</p>
-									</header>
-									<p>
-										I have been programming since 10th grade and fall in love with python in 2017. I code to innovate snd express my creativity.
-										Finding pattern has always been my thing which now I use with the most powerful entity today i.e. DATA. Being an engineer at heart I love challenges and learn by doing.
-									</p>
-									<a href="Resume.pdf" class="button primary small">Download Resume</a>
-								</div>
-							</section>
+  <div data-navwrap style="position: fixed; right: 40px; top: 50%; transform: translateY(-50%); z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; opacity: 0; transition: opacity 0.5s;">
+    <a data-nav="who" href="#who" style="display: flex; align-items: center; gap: 10px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(238,243,247,0.34); transition: color 0.3s;"><span>Who</span><span style="width: 16px; height: 1px; background: currentColor;"></span></a>
+    <a data-nav="work" href="#work" style="display: flex; align-items: center; gap: 10px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(238,243,247,0.34); transition: color 0.3s;"><span>Work</span><span style="width: 16px; height: 1px; background: currentColor;"></span></a>
+    <a data-nav="open-source" href="#open-source" style="display: flex; align-items: center; gap: 10px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(238,243,247,0.34); transition: color 0.3s;"><span>Source</span><span style="width: 16px; height: 1px; background: currentColor;"></span></a>
+    <a data-nav="track" href="#track" style="display: flex; align-items: center; gap: 10px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(238,243,247,0.34); transition: color 0.3s;"><span>Track</span><span style="width: 16px; height: 1px; background: currentColor;"></span></a>
+    <a data-nav="stack" href="#stack" style="display: flex; align-items: center; gap: 10px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(238,243,247,0.34); transition: color 0.3s;"><span>Stack</span><span style="width: 16px; height: 1px; background: currentColor;"></span></a>
+    <a data-nav="contact" href="#contact" style="display: flex; align-items: center; gap: 10px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(238,243,247,0.34); transition: color 0.3s;"><span>Contact</span><span style="width: 16px; height: 1px; background: currentColor;"></span></a>
+  </div>
 
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>I am a self taught programmer who learns by making stuff. I also design websites in idle time. I have been analyzing data sets for 6 months and have taught myself a few but useful tricks and techniques in doing it.</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-code">Write explainatory the code</li>
-										<li class="icon solid fa-database">Collect data </li>
-										<li class="icon solid fa-chart-bar">Preprocess & Analyze Data</li>
-										<li class="icon solid fa-html5">Design websites</li>
-										<li class="icon solid fa-python">Python</li>
-										<li class="icon solid fa-cube">C Programming</li>
-										<li class="icon solid fa-java">Java Programming</li>
-										<li class="icon solid fa-python">Django</li>
-									</ul>
-								</div>
-							</section>
+  <section data-screen-label="Hero sequence" style="position: relative; width: 100%; height: 100vh; min-height: 580px; overflow: hidden; cursor: crosshair; user-select: none;">
+    <div id="uth-stage" style="position: absolute; inset: 0;"></div>
+    <div style="position: absolute; inset: 0; pointer-events: none; z-index: 2; background: radial-gradient(120% 90% at 50% 45%, rgba(5,7,10,0) 35%, rgba(5,7,10,0.55) 100%);"></div>
+    <div style="position: absolute; inset: 0; pointer-events: none; z-index: 3; background: linear-gradient(100deg, rgba(5,7,10,0.82) 0%, rgba(5,7,10,0.45) 26%, rgba(5,7,10,0) 52%), linear-gradient(0deg, rgba(5,7,10,0.6) 0%, rgba(5,7,10,0) 34%);"></div>
 
-						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h3>My Work Collection</h3>
-									<p>With all the time after college I write codes and managed to do two or more things.</p>
-									<div class="features">
-										<article>
-											<a href="#" class="image"><img src="images/movie.jpeg" alt="" /></a>
-											<div class="inner">
-												<h4>Movie Recommendation Systems Collection</h4>
-												<p>Different Recommendation systems build using various approaches such as Collaborative approach, Content Based Recommendation, etc </p>
-												<a href="https://github.com/RitvikDayal/Movie-Recommendation-System" class="button primary small">Github</a>
-												<a href="https://ritvikdayal.github.io/movie_recommendation_system.html" class="button primary small">Notebook-Blog</a>
-											</div>
-										</article>
+    <div style="position: absolute; inset: 0; z-index: 4; pointer-events: none;">
 
-										<article>
-											<a href="#" class="image"><img src="images/boston.png" alt="" /></a>
-											<div class="inner">
-												<h4>Boston's Crime Analysis </h4>
-												<p>An analysis report on the crime records for Boston city to answer various question regarding the crime all across the city. </p>
-												<a href="https://github.com/RitvikDayal/Crime-in-Boston" class="button primary small">Github</a>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Newegg Scrapper</h4>
-												<p>A light efficient web scrapper that scrapes product data from <a href="https://www.newegg.com/">Newegg.com</a> on the basis of company enterded by the user.</p>
-												<a href="https://github.com/RitvikDayal/Real-State-Data-Analysis" class="button primary small">Github</a>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Real Estate Data Analysis &Aacute; Buisness Preiction</h4>
-												<p>Anlysis on real estate data to determine factors affecting the buisness and predictions the future buisess.</p>
-												<a href="https://github.com/RitvikDayal/Real-State-Data-Analysis" class="button primary small">Github</a>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpeg" alt="" /></a>
-											<div class="inner">
-												<h4>Suicide Data Analysis</h4>
-												<p>Data analysis determining the suicide patterns in different countries.</p>
-												<a href="https://github.com/RitvikDayal/Suicide-Data-Analysis" class="button primary small">Github</a>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/graph_algo.png" alt="" /></a>
-											<div class="inner">
-												<h4>Graph Algorithms in Java</h4>
-												<p>Implementation of various graphical alogrithms such as Bellman Ford, Djikistra's etc using JAVA programing language.</p>
-												<a href="https://github.com/RitvikDayal/Algorithms-Graph" class="button primary small">Github</a>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Scientific Calculator</h4>
-												<p>A calculator that satifies your calculation needs, works in both standard and scientific modes.</p>
-												<a href="https://github.com/RitvikDayal/Scientific_Calculator-Python-Tkinter" class="button primary small">Github</a>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Gaming Donjon</h4>
-												<p>A collection of simple and entertaining games in Javascript waiting to be played.</p>
-												<a href="https://github.com/RitvikDayal/Games-JavaScript" class="button primary small">Github</a>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
+      <div data-labels style="position: absolute; inset: 0;">
+        <div data-lab="0-0" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">your tap · 34 ms ago</span></div></div>
+        <div data-lab="0-1" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">stacked drawing layers</span></div></div>
+        <div data-lab="0-2" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">1.2 million lit dots</span></div></div>
+        <div data-lab="0-3" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">glass · 0.2 mm apart</span></div></div>
 
-						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Feel free to contact me. Actively looking for jobs and Internships and also available for Freelansing.<br/></p>
-									<div class="row">
-										<div class="col-6 col-12-xsmall" style="font-size: 14px;">
-											<ul class="alt">
-												<li>Email: <span style="color:black;">ritvikr1605@gmail.com</span></li>
-												<li>Phone: <span style="color:black;">+91-639-7972-713</span>, <spand style="color:black;">+91-945-7614-680</spand></li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-xsmall" style="font-size: 14px;">
-											<ul class="alt">
-												<li>Linkedin: <span style="color:black;"><a href="https://www.linkedin.com/in/ritvik-dayal-374449163/">Ritvik Dayal</a></span></li>
-												<li>Telegram: <spand style="color:black;"><a href="https://t.me/Ritvik98">@Ritvik98</a></spand></li>
-											</ul>
-										</div>
-									</div>
-									<form method="post" action="#">
-									</form>
+        <div data-lab="1-0" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #ffb26b; box-shadow: 0 0 8px #ffb26b;"></span><span style="width: 26px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #ffd7b0; text-transform: uppercase; white-space: nowrap;">the part that decides</span></div></div>
+        <div data-lab="1-1" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">memory, handed out in blocks</span></div></div>
+        <div data-lab="1-2" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">every app gets a private map</span></div></div>
+        <div data-lab="1-3" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">turns taken, 1000× a second</span></div></div>
 
-								</div>
-</section>
+        <div data-lab="2-0" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">the outer envelope</span></div></div>
+        <div data-lab="2-1" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">where to · where from</span></div></div>
+        <div data-lab="2-2" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #ffb26b; box-shadow: 0 0 8px #ffb26b;"></span><span style="width: 26px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #ffd7b0; text-transform: uppercase; white-space: nowrap;">the actual message</span></div></div>
+        <div data-lab="2-3" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">1500 bytes, no more</span></div></div>
 
-					</div>
-			</div>
+        <div data-lab="3-0" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #eef3f7; box-shadow: 0 0 8px #eef3f7;"></span><span style="width: 26px; height: 1px; background: rgba(238,243,247,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #eef3f7; text-transform: uppercase; white-space: nowrap;">ask the top of the tree</span></div></div>
+        <div data-lab="3-1" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">then who owns .com</span></div></div>
+        <div data-lab="3-2" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">an address, at last</span></div></div>
+        <div data-lab="3-3" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #ffb26b; box-shadow: 0 0 8px #ffb26b;"></span><span style="width: 26px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #ffd7b0; text-transform: uppercase; white-space: nowrap;">13 strangers pass it along</span></div></div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        <div data-lab="4-0" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">a rack, one of thousands</span></div></div>
+        <div data-lab="4-1" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #ffb26b; box-shadow: 0 0 8px #ffb26b;"></span><span style="width: 26px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #ffd7b0; text-transform: uppercase; white-space: nowrap;">power, overhead</span></div></div>
+        <div data-lab="4-2" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">cold air in, hot air out</span></div></div>
+        <div data-lab="4-3" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">an agent is watching the logs</span></div></div>
 
-	</body>
+        <div data-lab="5-0" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">picks a machine that's free</span></div></div>
+        <div data-lab="5-1" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #eef3f7; box-shadow: 0 0 8px #eef3f7;"></span><span style="width: 26px; height: 1px; background: rgba(238,243,247,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #eef3f7; text-transform: uppercase; white-space: nowrap;">seen this one before?</span></div></div>
+        <div data-lab="5-2" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">narrowing, half at a time</span></div></div>
+        <div data-lab="5-3" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #ffb26b; box-shadow: 0 0 8px #ffb26b;"></span><span style="width: 26px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #ffd7b0; text-transform: uppercase; white-space: nowrap;">one row, found</span></div></div>
+
+        <div data-lab="6-0" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">bytes become structure</span></div></div>
+        <div data-lab="6-1" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #7fe3ff; box-shadow: 0 0 8px #7fe3ff;"></span><span style="width: 26px; height: 1px; background: rgba(127,227,255,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #b9e9ff; text-transform: uppercase; white-space: nowrap;">everything gets a place</span></div></div>
+        <div data-lab="6-2" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #eef3f7; box-shadow: 0 0 8px #eef3f7;"></span><span style="width: 26px; height: 1px; background: rgba(238,243,247,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #eef3f7; text-transform: uppercase; white-space: nowrap;">painted, dot by dot</span></div></div>
+        <div data-lab="6-3" style="position: absolute; left: 0; top: 0; opacity: 0; will-change: transform, opacity;"><div style="display: flex; align-items: center; gap: 8px; transform: translate(10px, -8px);"><span style="width: 4px; height: 4px; background: #ffb26b; box-shadow: 0 0 8px #ffb26b;"></span><span style="width: 26px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; color: #ffd7b0; text-transform: uppercase; white-space: nowrap;">all of it, inside 16 ms</span></div></div>
+      </div>
+
+      <div data-captions style="position: absolute; left: 0; right: 0; bottom: 0;">
+        <div data-cap="0" style="position: absolute; left: 96px; bottom: 92px; width: min(560px, 46vw); opacity: 0; will-change: transform, opacity;">
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px;"><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">01</span><span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">the tap</span></div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase;"><span style="color: rgba(238,243,247,0.35);">in</span><span style="color: rgba(238,243,247,0.7);">a fingertip</span><span style="color: #7fe3ff;">→</span><span style="color: rgba(238,243,247,0.35);">out</span><span style="color: #7fe3ff;">a signal</span></div>
+          <h2 style="margin: 0 0 16px; font: 600 clamp(36px, 5vw, 70px)/0.94 Archivo, sans-serif; letter-spacing: -0.035em;">You touch<br />glass.</h2>
+          <p style="margin: 0; max-width: 40ch; font: 400 15px/1.65 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">One tap. Seven layers now have to cooperate to answer it, and each one hands its work to the next. Follow the whole chain down.</p>
+        </div>
+        <div data-cap="1" style="position: absolute; left: 96px; bottom: 92px; width: min(560px, 46vw); opacity: 0; will-change: transform, opacity;">
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px;"><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">02</span><span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">the order</span></div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase;"><span style="color: rgba(238,243,247,0.35);">in</span><span style="color: rgba(238,243,247,0.7);">a signal</span><span style="color: #7fe3ff;">→</span><span style="color: rgba(238,243,247,0.35);">out</span><span style="color: #7fe3ff;">a decision</span></div>
+          <h2 style="margin: 0 0 16px; font: 600 clamp(36px, 5vw, 70px)/0.94 Archivo, sans-serif; letter-spacing: -0.035em;">Software<br />keeps order.</h2>
+          <p style="margin: 0; max-width: 40ch; font: 400 15px/1.65 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">Hundreds of programs, one chip, a thousand handoffs a second. Something decides who goes next — and what happens when one of them fails.</p>
+        </div>
+        <div data-cap="2" style="position: absolute; left: 96px; bottom: 92px; width: min(560px, 46vw); opacity: 0; will-change: transform, opacity;">
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px;"><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">03</span><span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">the transmission</span></div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase;"><span style="color: rgba(238,243,247,0.35);">in</span><span style="color: rgba(238,243,247,0.7);">a decision</span><span style="color: #7fe3ff;">→</span><span style="color: rgba(238,243,247,0.35);">out</span><span style="color: #7fe3ff;">1,500 bytes</span></div>
+          <h2 style="margin: 0 0 16px; font: 600 clamp(36px, 5vw, 70px)/0.94 Archivo, sans-serif; letter-spacing: -0.035em;">The ask gets<br />wrapped and sent.</h2>
+          <p style="margin: 0; max-width: 40ch; font: 400 15px/1.65 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">A parcel inside a parcel inside a parcel. Every layer is a note for whoever handles it next, and none of them may read what's inside.</p>
+        </div>
+        <div data-cap="3" style="position: absolute; left: 96px; bottom: 92px; width: min(560px, 46vw); opacity: 0; will-change: transform, opacity;">
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px;"><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">04</span><span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">the route</span></div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase;"><span style="color: rgba(238,243,247,0.35);">in</span><span style="color: rgba(238,243,247,0.7);">a name</span><span style="color: #7fe3ff;">→</span><span style="color: rgba(238,243,247,0.35);">out</span><span style="color: #7fe3ff;">13 hops</span></div>
+          <h2 style="margin: 0 0 16px; font: 600 clamp(36px, 5vw, 70px)/0.94 Archivo, sans-serif; letter-spacing: -0.035em;">Nobody knows<br />the whole way.</h2>
+          <p style="margin: 0; max-width: 40ch; font: 400 15px/1.65 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">The name is traded for an address, then the parcel is passed between strangers who each know only who's next. Reliability is won or lost here.</p>
+        </div>
+        <div data-cap="4" style="position: absolute; left: 96px; bottom: 92px; width: min(560px, 46vw); opacity: 0; will-change: transform, opacity;">
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px;"><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">05</span><span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">the room</span></div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase;"><span style="color: rgba(238,243,247,0.35);">in</span><span style="color: rgba(238,243,247,0.7);">a request</span><span style="color: #7fe3ff;">→</span><span style="color: rgba(238,243,247,0.35);">out</span><span style="color: #7fe3ff;">a queued job</span></div>
+          <h2 style="margin: 0 0 16px; font: 600 clamp(36px, 5vw, 70px)/0.94 Archivo, sans-serif; letter-spacing: -0.035em;">It lands in a<br />room that hums.</h2>
+          <p style="margin: 0; max-width: 40ch; font: 400 15px/1.65 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">Aisles of machines, cold air in and hot air out, and an agent reading the logs at 3 a.m. so nobody gets paged. This is the floor I work on.</p>
+        </div>
+        <div data-cap="5" style="position: absolute; left: 96px; bottom: 92px; width: min(560px, 46vw); opacity: 0; will-change: transform, opacity;">
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px;"><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">06</span><span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">the processing</span></div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase;"><span style="color: rgba(238,243,247,0.35);">in</span><span style="color: rgba(238,243,247,0.7);">a queued job</span><span style="color: #7fe3ff;">→</span><span style="color: rgba(238,243,247,0.35);">out</span><span style="color: #7fe3ff;">one row</span></div>
+          <h2 style="margin: 0 0 16px; font: 600 clamp(36px, 5vw, 70px)/0.94 Archivo, sans-serif; letter-spacing: -0.035em;">Data becomes<br />an answer.</h2>
+          <p style="margin: 0; max-width: 40ch; font: 400 15px/1.65 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">A doorman, a cache, a pipeline, a sorted index that halves the search at every step — until billions of rows collapse into the one you asked for.</p>
+        </div>
+        <div data-cap="6" style="position: absolute; left: 96px; bottom: 92px; width: min(560px, 46vw); opacity: 0; will-change: transform, opacity;">
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px;"><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">07</span><span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span><span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">the return</span></div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase;"><span style="color: rgba(238,243,247,0.35);">in</span><span style="color: rgba(238,243,247,0.7);">one row</span><span style="color: #7fe3ff;">→</span><span style="color: rgba(238,243,247,0.35);">out</span><span style="color: #7fe3ff;">light</span></div>
+          <h2 style="margin: 0 0 16px; font: 600 clamp(36px, 5vw, 70px)/0.94 Archivo, sans-serif; letter-spacing: -0.035em;">And then,<br />light again.</h2>
+          <p style="margin: 0; max-width: 40ch; font: 400 15px/1.65 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">Back up all seven layers and painted onto glass inside sixteen milliseconds. My job is the middle five — the ones you never see fail.</p>
+        </div>
+      </div>
+
+      <div data-rail-wrap style="position: absolute; left: 42px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 13px;">
+        <div data-rail="0" style="display: flex; align-items: center; gap: 10px; opacity: 0.3; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">01</span></div>
+        <div data-rail="1" style="display: flex; align-items: center; gap: 10px; opacity: 0.3; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">02</span></div>
+        <div data-rail="2" style="display: flex; align-items: center; gap: 10px; opacity: 0.3; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">03</span></div>
+        <div data-rail="3" style="display: flex; align-items: center; gap: 10px; opacity: 0.3; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">04</span></div>
+        <div data-rail="4" style="display: flex; align-items: center; gap: 10px; opacity: 0.3; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">05</span></div>
+        <div data-rail="5" style="display: flex; align-items: center; gap: 10px; opacity: 0.3; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">06</span></div>
+        <div data-rail="6" style="display: flex; align-items: center; gap: 10px; opacity: 0.3; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">07</span></div>
+      </div>
+
+      <div style="position: absolute; right: 96px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px;">
+        <div style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.45);"><span data-pct>00</span></div>
+        <div style="position: relative; width: 1px; height: 180px; background: rgba(238,243,247,0.14);">
+          <div data-bar style="position: absolute; inset: 0; background: linear-gradient(#7fe3ff, #ffb26b); transform-origin: top; transform: scaleY(0);"></div>
+        </div>
+      </div>
+
+      <div style="position: absolute; right: 130px; bottom: 92px; text-align: right;">
+        <div data-hud="0" style="opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 01 · surface<br /><span style="color: #7fe3ff;">5 layers · 1.2 M lit dots</span></div>
+        <div data-hud="1" style="position: absolute; right: 0; bottom: 0; opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 02 · kernel<br /><span style="color: #7fe3ff;">312 programs · 1 referee</span></div>
+        <div data-hud="2" style="position: absolute; right: 0; bottom: 0; opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 03 · transport<br /><span style="color: #7fe3ff;">4 wrappers · 1500 bytes</span></div>
+        <div data-hud="3" style="position: absolute; right: 0; bottom: 0; opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 04 · network<br /><span style="color: #7fe3ff;">name → address · 13 hops</span></div>
+        <div data-hud="4" style="position: absolute; right: 0; bottom: 0; opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 05 · platform<br /><span style="color: #7fe3ff;">40,000 machines · 92 MW</span></div>
+        <div data-hud="5" style="position: absolute; right: 0; bottom: 0; opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 06 · data<br /><span style="color: #7fe3ff;">4.1 B rows · 900 µs</span></div>
+        <div data-hud="6" style="position: absolute; right: 0; bottom: 0; opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 07 · return<br /><span style="color: #7fe3ff;">round trip · 16 ms</span></div>
+      </div>
+
+      <div data-title-card style="position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 0 24px;">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 30px;">
+            <span style="width: 44px; height: 1px; background: rgba(127,227,255,0.45);"></span>
+            <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.42em; text-transform: uppercase; color: #7fe3ff;">Ritvik Dayal · portfolio</span>
+            <span style="width: 44px; height: 1px; background: rgba(127,227,255,0.45);"></span>
+          </div>
+          <h1 style="margin: 0; font: 300 clamp(46px, 9.5vw, 150px)/0.86 Archivo, sans-serif; letter-spacing: -0.055em; animation: uthWipe 1.5s cubic-bezier(0.16,1,0.3,1) 0.25s both;">Under<br /><span style="font-weight: 600; color: #7fe3ff;">the Hood</span></h1>
+          <p style="margin: 34px auto 0; max-width: 50ch; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.6); text-wrap: pretty;">Seven layers stand between a tap and an answer, each one handing its work to the next. I'm a senior software engineer who builds and holds up the middle of that chain. Scroll down through it — the work is on the other side.</p>
+          <div data-hint style="margin-top: 46px; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: opacity 0.6s; animation: uthDrift 2.6s ease-in-out infinite;">
+            <span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; text-transform: uppercase; color: rgba(238,243,247,0.42);">scroll to descend</span>
+            <span style="width: 1px; height: 34px; background: linear-gradient(rgba(127,227,255,0.7), transparent);"></span>
+          </div>
+        </div>
+      </div>
+
+      <div data-end-card style="position: absolute; left: 0; right: 0; bottom: 0; padding: 120px 24px 62px; display: flex; flex-direction: column; align-items: center; gap: 14px; opacity: 0; background: linear-gradient(rgba(5,7,10,0) 0%, rgba(5,7,10,0.78) 42%, rgba(5,7,10,0.94) 100%);">
+        <span style="font: 500 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.42em; text-transform: uppercase; color: #7fe3ff;">layers 02 to 06 are my job</span>
+        <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(238,243,247,0.72);">keep scrolling</span>
+        <span style="width: 1px; height: 40px; background: linear-gradient(rgba(127,227,255,0.85), transparent); animation: uthDrift 2.6s ease-in-out infinite;"></span>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="who" data-screen-label="Who" style="position: relative; padding: 150px 0 130px;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 96px);">
+      <div data-rise style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 44px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">01</span>
+        <span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span>
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">who</span>
+      </div>
+      <h2 data-rise style="margin: 0 0 40px; max-width: 20ch; font: 600 clamp(34px, 5.4vw, 78px)/0.98 Archivo, sans-serif; letter-spacing: -0.04em; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s;">I build the layers you just flew through.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 44px; align-items: start;">
+        <p data-rise style="margin: 0; font: 400 16px/1.75 Archivo, sans-serif; color: rgba(238,243,247,0.72); text-wrap: pretty; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s;">Senior software engineer, five-plus years on AI platforms, distributed backends and cloud infrastructure. I've proposed, won buy-in for, and shipped two production platforms end to end — an AI incident-investigation system and a browser-based BIM authoring platform — and I tend to be the one who turns a manual process into something that runs itself.</p>
+        <p data-rise style="margin: 0; font: 400 16px/1.75 Archivo, sans-serif; color: rgba(238,243,247,0.55); text-wrap: pretty; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.18s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.18s;">Based in Noida, working remote with teams in the US. I cut cloud costs, harden systems for SOC 2, and mentor engineers across a six-hour time gap. Recognised company-wide with the Q1 2026 award for Exceptional Innovation and Advancement in AI.</p>
+      </div>
+      <div data-rise style="margin-top: 76px; border-top: 1px solid rgba(238,243,247,0.12); display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.24s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.24s;">
+        <div style="padding: 32px 28px 0 0; border-right: 1px solid rgba(238,243,247,0.09);">
+          <div style="font: 600 clamp(32px, 3.6vw, 48px)/1 Archivo, sans-serif; letter-spacing: -0.04em; color: #7fe3ff;">100×</div>
+          <div style="margin-top: 12px; font: 400 10px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.5);">lower cost per<br />incident investigated</div>
+        </div>
+        <div style="padding: 32px 28px 0; border-right: 1px solid rgba(238,243,247,0.09);">
+          <div style="font: 600 clamp(32px, 3.6vw, 48px)/1 Archivo, sans-serif; letter-spacing: -0.04em; color: #ffb26b;">$35K+</div>
+          <div style="margin-top: 12px; font: 400 10px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.5);">saved per year on<br />licences and time</div>
+        </div>
+        <div style="padding: 32px 28px 0; border-right: 1px solid rgba(238,243,247,0.09);">
+          <div style="font: 600 clamp(32px, 3.6vw, 48px)/1 Archivo, sans-serif; letter-spacing: -0.04em; color: #eef3f7;">500+</div>
+          <div style="margin-top: 12px; font: 400 10px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.5);">production incidents<br />auto-investigated</div>
+        </div>
+        <div style="padding: 32px 0 0 28px;">
+          <div style="font: 600 clamp(32px, 3.6vw, 48px)/1 Archivo, sans-serif; letter-spacing: -0.04em; color: #eef3f7;">3 min</div>
+          <div style="margin-top: 12px; font: 400 10px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.5);">average, down from<br />15–60 by hand</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" data-screen-label="Selected work" style="position: relative; padding: 40px 0 130px;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 96px);">
+      <div data-rise style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 44px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">02</span>
+        <span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span>
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">selected work</span>
+      </div>
+      <h2 data-rise style="margin: 0 0 72px; max-width: 22ch; font: 600 clamp(32px, 4.6vw, 64px)/1 Archivo, sans-serif; letter-spacing: -0.04em; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s;">Five things I proposed, built, and shipped.</h2>
+
+      <article data-rise style="border-top: 1px solid rgba(255,178,107,0.4); padding: 40px 0 44px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: stretch; grid-template-rows: 1fr auto;">
+          <div style="grid-row: 1 / span 2;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+              <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: #7fe3ff;">01</span>
+              <span style="padding: 5px 10px; border: 1px solid rgba(255,178,107,0.35); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: #ffd7b0;">Doxel · 2026</span>
+              <span style="padding: 5px 10px; background: #ffb26b; font: 500 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: #05070a;">Latest</span>
+            </div>
+            <h3 style="margin: 0 0 18px; font: 600 clamp(26px, 2.9vw, 40px)/1.06 Archivo, sans-serif; letter-spacing: -0.035em;">BIM review and markup, in a browser tab</h3>
+            <p style="margin: 0 0 20px; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">Reviewing a model used to mean Navisworks or AutoCAD on a workstation, a paid seat for every reviewer, and a file shipped around by hand. This replaces all of that with a link: open the model in a browser, walk it in 3D, draw straight over the floor plan, and leave the markup where the next person will find it.</p>
+            <p style="margin: 0; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.5); text-wrap: pretty;">The 3D model, the 2D floor plan and site imagery share one review surface, so a comment can point at the geometry instead of describing it. People who never had a desktop licence can now take part in the review, and the model never has to leave the platform to get looked at.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; align-self: start; background: rgba(238,243,247,0.1);">
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">2 → 0</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">desktop licences to<br />review a model</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">3D + 2D</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">model, floor plan and<br />imagery in one view</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">50,000+</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">elements, rendered in<br />a browser tab</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">1 link</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">to open a review,<br />nothing to install</div></div>
+          </div>
+          <div style="grid-column: 2; grid-row: 2; align-self: end; border-top: 1px solid rgba(255,178,107,0.28); padding-top: 20px;">
+            <div style="display: flex; gap: 12px;">
+              <div style="flex: 1; position: relative; height: 92px; border: 1px solid rgba(238,243,247,0.14); overflow: hidden;">
+                <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(127,227,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(127,227,255,0.09) 1px, transparent 1px); background-size: 11px 11px;"></div>
+                <div style="position: absolute; left: 50%; top: 52%; width: 42px; height: 28px; transform: translate(-50%,-50%) rotateX(58deg) rotateZ(-38deg); border: 1px solid rgba(127,227,255,0.8);"></div>
+                <div style="position: absolute; left: 50%; top: 42%; width: 42px; height: 28px; transform: translate(-50%,-50%) rotateX(58deg) rotateZ(-38deg); border: 1px solid rgba(127,227,255,0.34);"></div>
+                <div style="position: absolute; left: 8px; top: 8px; font: 400 7px/1 'JetBrains Mono', monospace; letter-spacing: 0.16em; color: rgba(127,227,255,0.6);">3D</div>
+              </div>
+              <div style="flex: 1; position: relative; height: 92px; border: 1px solid rgba(238,243,247,0.14); overflow: hidden;">
+                <div style="position: absolute; left: 10px; top: 14px; width: 34px; height: 26px; border: 1px solid rgba(238,243,247,0.22);"></div>
+                <div style="position: absolute; left: 48px; top: 14px; width: 24px; height: 44px; border: 1px solid rgba(238,243,247,0.22);"></div>
+                <div style="position: absolute; left: 10px; top: 44px; width: 34px; height: 28px; border: 1px solid rgba(238,243,247,0.22);"></div>
+                <div style="position: absolute; left: 16px; top: 30px; width: 46px; height: 1px; background: #ffb26b; transform: rotate(24deg); box-shadow: 0 0 6px rgba(255,178,107,0.8);"></div>
+                <div style="position: absolute; left: 54px; top: 46px; width: 22px; height: 1px; background: #ffb26b; transform: rotate(-52deg); box-shadow: 0 0 6px rgba(255,178,107,0.8);"></div>
+                <div style="position: absolute; left: 60px; top: 34px; width: 5px; height: 5px; background: #ffb26b; box-shadow: 0 0 8px #ffb26b;"></div>
+                <div style="position: absolute; left: 8px; top: 8px; font: 400 7px/1 'JetBrains Mono', monospace; letter-spacing: 0.16em; color: rgba(255,178,107,0.75);">MARKUP</div>
+              </div>
+            </div>
+            <div style="margin-top: 12px; font: 400 8px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.35);">model and plan, one review surface</div>
+          </div>
+        </div>
+        <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="padding: 7px 12px; border: 1px solid rgba(255,178,107,0.3); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,215,176,0.85);">Replaces Navisworks · AutoCAD</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">three.js · WebGL</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">Floor-plan markup</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">React</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">PostGIS</span>
+        </div>
+      </article>
+
+      <article data-rise style="border-top: 1px solid rgba(127,227,255,0.22); padding: 40px 0 44px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: stretch; grid-template-rows: 1fr auto;">
+          <div style="grid-row: 1 / span 2;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: #7fe3ff;">02</span>
+              <span style="padding: 5px 10px; border: 1px solid rgba(255,178,107,0.35); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: #ffd7b0;">Doxel · 2025</span>
+            </div>
+            <h3 style="margin: 0 0 18px; font: 600 clamp(26px, 2.9vw, 40px)/1.06 Archivo, sans-serif; letter-spacing: -0.035em;">AI incident-investigation platform</h3>
+            <p style="margin: 0 0 20px; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">Every PagerDuty incident used to cost an engineer 15–60 minutes of digging. I architected and shipped an LLM-agent platform with 22+ tools — code search, git history, the production database, Datadog, Jira — that investigates on its own and posts root-cause analysis straight to Slack.</p>
+            <p style="margin: 0; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.5); text-wrap: pretty;">Proposal to prototype in three days, prototype to production in four weeks on GKE. It grew into a company-wide platform with 12 integrations, an org-wide MCP server, 1,000+ unit tests and a self-learning feedback loop — closing the six-hour overnight gap between the India and US teams.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; align-self: start; background: rgba(238,243,247,0.1);">
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">&lt; 3 min</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">average investigation<br />vs 15–60 manual</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">$0.10–0.40</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">per incident, against<br />~$25 of engineer time</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">80%</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">rated helpful by<br />on-call engineers</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">23</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">auto-generated<br />draft fix PRs</div></div>
+          </div>
+          <div style="grid-column: 2; grid-row: 2; align-self: end; border-top: 1px solid rgba(127,227,255,0.2); padding-top: 20px;">
+            <div style="position: relative; height: 92px; display: grid; place-items: center;">
+              <div style="width: 90px; height: 90px; border-radius: 50%; background: repeating-conic-gradient(from 0deg, rgba(127,227,255,0.55) 0deg 0.7deg, transparent 0.7deg 16.36deg); mask: radial-gradient(circle, transparent 15px, #000 16px, #000 44px, transparent 45px);"></div>
+              <div style="position: absolute; width: 24px; height: 24px; border: 1px solid rgba(255,178,107,0.85); transform: rotate(45deg);"></div>
+              <div style="position: absolute; width: 6px; height: 6px; background: #ffb26b; box-shadow: 0 0 10px #ffb26b;"></div>
+              <div style="position: absolute; left: 0; top: 4px; font: 400 7px/1 'JetBrains Mono', monospace; letter-spacing: 0.16em; color: rgba(127,227,255,0.6);">22 TOOLS</div>
+              <div style="position: absolute; right: 0; bottom: 4px; font: 400 7px/1 'JetBrains Mono', monospace; letter-spacing: 0.16em; color: rgba(255,178,107,0.7);">1 AGENT</div>
+            </div>
+            <div style="margin-top: 12px; font: 400 8px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.35);">one spine, every source it can read</div>
+          </div>
+        </div>
+        <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">LLM agents</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">MCP server · 7 tools</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">GKE</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">Terraform · Helm</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">Datadog · PagerDuty</span>
+        </div>
+      </article>
+
+      <article data-rise style="border-top: 1px solid rgba(127,227,255,0.22); padding: 40px 0 44px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: stretch; grid-template-rows: 1fr auto;">
+          <div style="grid-row: 1 / span 2;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: #7fe3ff;">03</span>
+              <span style="padding: 5px 10px; border: 1px solid rgba(255,178,107,0.35); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: #ffd7b0;">Doxel · 2025</span>
+            </div>
+            <h3 style="margin: 0 0 18px; font: 600 clamp(26px, 2.9vw, 40px)/1.06 Archivo, sans-serif; letter-spacing: -0.035em;">Browser-based BIM authoring &amp; review</h3>
+            <p style="margin: 0 0 20px; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">A zone-authoring workflow spread across three commercial desktop tools and two teams, with a multi-day handoff in the middle. I proposed and designed a single web app to replace it, then built it end to end from solo proof-of-concept to production.</p>
+            <p style="margin: 0; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.5); text-wrap: pretty;">A three.js/React viewer rendering 50,000+ element BIM models in-browser, a 2D floorplan editor with wall snapping, PostGIS-backed zone geometry, and an async write path over REST and Airflow. Duplicate zone drawing across two teams disappeared; the cross-team handoff collapsed into a same-tool review.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; align-self: start; background: rgba(238,243,247,0.1);">
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">$35K+</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">saved per year in<br />licences and time</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">3 → 1</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">desktop tools folded<br />into one web app</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">50,000+</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">model elements<br />rendered in-browser</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">30+</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">PRs merged, POC<br />to production</div></div>
+          </div>
+          <div style="grid-column: 2; grid-row: 2; align-self: end; border-top: 1px solid rgba(127,227,255,0.2); padding-top: 20px;">
+            <div style="position: relative; height: 92px; display: flex; align-items: center; gap: 18px;">
+              <div style="position: relative; width: 92px; height: 72px;">
+                <div style="position: absolute; left: 0; top: 0; width: 54px; height: 40px; border: 1px solid rgba(238,243,247,0.2);"></div>
+                <div style="position: absolute; left: 12px; top: 14px; width: 54px; height: 40px; border: 1px solid rgba(238,243,247,0.3);"></div>
+                <div style="position: absolute; left: 24px; top: 28px; width: 54px; height: 40px; border: 1px solid rgba(238,243,247,0.42);"></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <div style="width: 22px; height: 1px; background: rgba(127,227,255,0.6);"></div>
+                <div style="font: 400 9px/1 'JetBrains Mono', monospace; color: #7fe3ff;">&rarr;</div>
+              </div>
+              <div style="width: 62px; height: 46px; border: 1px solid rgba(127,227,255,0.8); background: rgba(127,227,255,0.07); display: grid; place-items: center; font: 400 7px/1 'JetBrains Mono', monospace; letter-spacing: 0.16em; color: rgba(127,227,255,0.85);">WEB</div>
+            </div>
+            <div style="margin-top: 12px; font: 400 8px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.35);">three desktop tools, one browser tab</div>
+          </div>
+        </div>
+        <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">three.js · WebGL</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">React · Vite</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">PostgreSQL · PostGIS</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">FastAPI</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">Airflow</span>
+        </div>
+      </article>
+
+      <article data-rise style="border-top: 1px solid rgba(127,227,255,0.22); padding: 40px 0 44px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: stretch; grid-template-rows: 1fr auto;">
+          <div style="grid-row: 1 / span 2;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: #7fe3ff;">04</span>
+              <span style="padding: 5px 10px; border: 1px solid rgba(127,227,255,0.3); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.7);">GeeksforGeeks · 2022</span>
+            </div>
+            <h3 style="margin: 0 0 18px; font: 600 clamp(26px, 2.9vw, 40px)/1.06 Archivo, sans-serif; letter-spacing: -0.035em;">Code-execution architecture around an existing compiler</h3>
+            <p style="margin: 0 0 20px; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">The obvious answer to running learners' code was to build a compiler service. We didn't. I designed the system <em style="font-style: normal; color: #eef3f7;">around</em> the compiler that already existed — an IDE-like execution server that wraps it in a Docker sandbox, isolates multi-language runs, and treats the toolchain as a dependency rather than a product.</p>
+            <p style="margin: 0; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.5); text-wrap: pretty;">The architecture was the win: 30–40% less cost and complexity than building and maintaining our own, 20% less compute at peak traffic, and Python and Go supported on day one instead of one language at a time.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; align-self: start; background: rgba(238,243,247,0.1);">
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">30–40%</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">less cost and<br />complexity</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">−20%</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">compute at<br />peak traffic</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">0</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">compilers written<br />or maintained</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">−25%</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">API latency on the<br />surrounding backend</div></div>
+          </div>
+          <div style="grid-column: 2; grid-row: 2; align-self: end; border-top: 1px solid rgba(127,227,255,0.2); padding-top: 20px;">
+            <div style="position: relative; height: 92px; display: grid; place-items: center;">
+              <div style="position: relative; width: 96px; height: 76px; display: grid; place-items: center;">
+                <div style="position: absolute; inset: 0; border: 1px dashed rgba(238,243,247,0.2);"></div>
+                <div style="position: absolute; inset: 11px; border: 1px solid rgba(127,227,255,0.35);"></div>
+                <div style="width: 34px; height: 24px; border: 1px solid rgba(255,178,107,0.85); background: rgba(255,178,107,0.1); display: grid; place-items: center; font: 400 7px/1 'JetBrains Mono', monospace; letter-spacing: 0.1em; color: #ffd7b0;">CC</div>
+                <div style="position: absolute; left: -14px; top: 50%; width: 16px; height: 1px; background: rgba(127,227,255,0.7);"></div>
+                <div style="position: absolute; right: -14px; top: 50%; width: 16px; height: 1px; background: rgba(127,227,255,0.7);"></div>
+                <div style="position: absolute; left: 0; top: -13px; font: 400 7px/1 'JetBrains Mono', monospace; letter-spacing: 0.16em; color: rgba(238,243,247,0.4);">SANDBOX</div>
+              </div>
+            </div>
+            <div style="margin-top: 12px; font: 400 8px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.35);">wrap the compiler, don't rebuild it</div>
+          </div>
+        </div>
+        <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">System architecture</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">Docker sandboxing</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">Python · Go</span>
+          <span style="padding: 7px 12px; border: 1px solid rgba(127,227,255,0.2); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.6);">Microservices</span>
+        </div>
+      </article>
+
+      <article data-rise style="border-top: 1px solid rgba(127,227,255,0.22); border-bottom: 1px solid rgba(127,227,255,0.22); padding: 40px 0 48px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: stretch; grid-template-rows: 1fr auto;">
+          <div style="grid-row: 1 / span 2;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: #7fe3ff;">05</span>
+              <span style="padding: 5px 10px; border: 1px solid rgba(127,227,255,0.3); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.7);">Doxel · 2023–2025</span>
+            </div>
+            <h3 style="margin: 0 0 18px; font: 600 clamp(26px, 2.9vw, 40px)/1.06 Archivo, sans-serif; letter-spacing: -0.035em;">The unglamorous half: cost, latency, CVEs</h3>
+            <p style="margin: 0 0 20px; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">Re-architected entity-element mapping from synchronous APIs to async Kubernetes jobs across four repositories, cutting hot-path response times 25–45% with caching. Right-sized Kubernetes compute for Airflow pipelines with Terraform and took 10% off cloud compute while making reliability better, not worse.</p>
+            <p style="margin: 0; font: 400 15px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.5); text-wrap: pretty;">Shipped infrastructure security checks that lifted security posture 35% by Vanta's measure, directly supporting SOC 2 procurement. In one hardening sprint: 406 unit tests across 15 previously untested modules and 19 CVEs patched. Mentored three engineers from junior to senior along the way.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; align-self: start; background: rgba(238,243,247,0.1);">
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">25–45%</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">faster hot-path<br />API responses</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">+35%</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">security posture,<br />SOC 2 support</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">406</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">unit tests across 15<br />untested modules</div></div>
+            <div style="background: #05070a; padding: 26px 22px;"><div style="font: 600 30px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">19</div><div style="margin-top: 10px; font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">CVEs patched in one<br />hardening sprint</div></div>
+          </div>
+          <div style="grid-column: 2; grid-row: 2; align-self: end; border-top: 1px solid rgba(127,227,255,0.2); padding-top: 20px;">
+            <div style="position: relative; height: 92px; display: flex; align-items: flex-end; gap: 9px; padding-bottom: 14px;">
+              <div style="width: 16px; height: 66px; background: rgba(127,227,255,0.16); border-top: 1px solid rgba(127,227,255,0.5);"></div>
+              <div style="width: 16px; height: 52px; background: rgba(127,227,255,0.16); border-top: 1px solid rgba(127,227,255,0.5);"></div>
+              <div style="width: 16px; height: 40px; background: rgba(127,227,255,0.16); border-top: 1px solid rgba(127,227,255,0.5);"></div>
+              <div style="width: 16px; height: 29px; background: rgba(127,227,255,0.16); border-top: 1px solid rgba(127,227,255,0.5);"></div>
+              <div style="width: 16px; height: 20px; background: rgba(255,178,107,0.22); border-top: 1px solid #ffb26b;"></div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 13px; height: 1px; background: rgba(238,243,247,0.22);"></div>
+              <div style="position: absolute; left: 0; bottom: 0; font: 400 7px/1 'JetBrains Mono', monospace; letter-spacing: 0.16em; color: rgba(238,243,247,0.4);">LATENCY &middot; COST &middot; CVEs</div>
+            </div>
+            <div style="margin-top: 12px; font: 400 8px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.35);">every number pointing down</div>
+          </div>
+        </div>
+      </article>
+
+      <div data-rise style="margin-top: 64px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px;">
+          <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: rgba(238,243,247,0.4);">On the table</span>
+          <span style="flex: 1; height: 1px; background: rgba(238,243,247,0.12);"></span>
+        </div>
+        <div style="border: 1px solid rgba(238,243,247,0.14); padding: 30px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: start;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+              <span style="padding: 4px 9px; border: 1px solid rgba(255,178,107,0.4); font: 400 8px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: #ffd7b0;">Proposal · benchmarked</span>
+            </div>
+            <h4 style="margin: 0 0 12px; font: 600 20px/1.25 Archivo, sans-serif; letter-spacing: -0.02em;">Vision-language shadow annotator</h4>
+            <p style="margin: 0; font: 400 14px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.58); text-wrap: pretty;">A design proposal, not a shipped system: VLM inference with cross-frame consensus and graph propagation, aimed at removing 60–70% of manual BIM element annotation. I built the case with numbers before asking anyone to fund it.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px;">
+            <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">663</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">ground-truth<br />cases</div></div>
+            <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">4</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">models<br />compared</div></div>
+            <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">$0.046</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">best run, 100%<br />precision</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="open-source" data-screen-label="Open source" style="position: relative; padding: 40px 0 130px;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 96px);">
+
+      <div data-rise style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 44px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">03</span>
+        <span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span>
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">open source</span>
+      </div>
+
+      <h2 data-rise style="margin: 0 0 28px; max-width: 24ch; font: 300 clamp(38px, 7vw, 108px)/0.92 Archivo, sans-serif; letter-spacing: -0.05em; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s;">Shipping to strangers<br />is a different job.</h2>
+
+      <p data-rise style="margin: 0 0 64px; max-width: 58ch; font: 400 16px/1.75 Archivo, sans-serif; color: rgba(238,243,247,0.62); text-wrap: pretty; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s;">FeatherWall is my first open-source project. A live-wallpaper engine for Windows 10 and 11 in 7.5&nbsp;MB — one process, no bundled browser engine, which is the whole point and the reason it stays out of your RAM. It went public under MIT on 15 August 2026. What follows is what came back.</p>
+
+      <div data-rise style="border: 1px solid rgba(238,243,247,0.14); padding: 30px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: start; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.18s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.18s;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;">
+            <span style="padding: 4px 9px; border: 1px solid rgba(127,227,255,0.4); font: 400 8px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: #7fe3ff;">First open source · MIT</span>
+          </div>
+          <h4 style="margin: 0 0 12px; font: 600 20px/1.25 Archivo, sans-serif; letter-spacing: -0.02em;">FeatherWall</h4>
+          <p style="margin: 0 0 20px; font: 400 14px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.58); text-wrap: pretty;">Video and image wallpapers per monitor, a designed clock widget drawn as an overlay, auto-pause when something takes the foreground, and a self-healing re-attach for when the desktop rebuilds itself underneath you. The category standard is to ship a browser engine to draw a clock. This one doesn’t.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="padding: 5px 10px; border: 1px solid rgba(238,243,247,0.16); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(238,243,247,0.55);">C#</span>
+            <span style="padding: 5px 10px; border: 1px solid rgba(238,243,247,0.16); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(238,243,247,0.55);">Windows 10 / 11</span>
+            <span style="padding: 5px 10px; border: 1px solid rgba(238,243,247,0.16); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(238,243,247,0.55);">No browser engine</span>
+            <a href="https://github.com/RitvikDayal/featherwall" style="padding: 5px 10px; border: 1px solid rgba(127,227,255,0.4); font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: #7fe3ff;">Repository →</a>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 24px;">
+          <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">18</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">github<br />stars</div></div>
+          <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">7.5 MB</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">the whole<br />application</div></div>
+          <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">0</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">browser engines<br />bundled</div></div>
+          <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">v0.1.0</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">shipped<br />15 aug 2026</div></div>
+        </div>
+      </div>
+
+      <div data-rise style="margin-top: 64px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; flex-wrap: wrap;">
+          <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: rgba(238,243,247,0.4);">What came back</span>
+          <span style="flex: 1; height: 1px; background: rgba(238,243,247,0.12); min-width: 30px;"></span>
+          <span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.3);">Reddit · 15–16 Aug 2026</span>
+        </div>
+        <div style="border: 1px solid rgba(238,243,247,0.14); padding: 30px 28px;">
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 24px; padding-bottom: 26px;">
+            <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">5</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">subreddits,<br />~24 comments</div></div>
+            <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">84</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">of ~118 github<br />referrals</div></div>
+            <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">111</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">clones in the<br />first days</div></div>
+            <div><div style="font: 600 24px/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">187</div><div style="margin-top: 8px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.42);">repository<br />views</div></div>
+          </div>
+
+          <p style="margin: 0; font: 400 14px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.58); text-wrap: pretty; border-top: 1px solid rgba(238,243,247,0.1); padding-top: 22px;">Carried by <span style="color: #eef3f7;">r/desktops</span> — <span style="font-style: italic;">“No Wallpaper Engine, no Chromium, 7.5 MB Open Source App”</span> — at 25 points and 12 comments, then r/coolgithubprojects at 9. Four concrete asks came out of it, and every one is on the v0.2 roadmap.</p>
+
+          <div style="margin-top: 14px;">
+        <div style="display: grid; grid-template-columns: 26px 1fr; gap: 16px; padding: 15px 0; border-top: 1px solid rgba(238,243,247,0.1);">
+          <span style="font: 400 10px/1.8 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #7fe3ff;">01</span>
+          <div style="font: 400 14px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">A <span style="color: #eef3f7;">weather widget</span> — and the asker raised the lightweight tension themselves. <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.06em; color: rgba(238,243,247,0.38); white-space: nowrap;">satosru</span></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 26px 1fr; gap: 16px; padding: 15px 0; border-top: 1px solid rgba(238,243,247,0.1);">
+          <span style="font: 400 10px/1.8 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #7fe3ff;">02</span>
+          <div style="font: 400 14px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">Separate <span style="color: #eef3f7;">font settings for the date</span> and the time, from someone two days into daily use. <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.06em; color: rgba(238,243,247,0.38); white-space: nowrap;">Ok_Algae_8222</span></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 26px 1fr; gap: 16px; padding: 15px 0; border-top: 1px solid rgba(238,243,247,0.1);">
+          <span style="font: 400 10px/1.8 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #7fe3ff;">03</span>
+          <div style="font: 400 14px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">Widgets that go idle — <span style="font-style: italic;">“the clock just stays still until the user minimizes an app”</span>. </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 26px 1fr; gap: 16px; padding: 15px 0; border-top: 1px solid rgba(238,243,247,0.1);">
+          <span style="font: 400 10px/1.8 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #7fe3ff;">04</span>
+          <div style="font: 400 14px/1.7 Archivo, sans-serif; color: rgba(238,243,247,0.66); text-wrap: pretty;">A <span style="color: #eef3f7;">measured comparison</span> against Wallpaper Engine, Lively and DesktopHut, asked in two independent threads — one of them had uninstalled both over RAM. <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.06em; color: rgba(238,243,247,0.38); white-space: nowrap;">Old-Birthday3202</span></div>
+        </div>
+
+          </div>
+
+          <div style="margin-top: 26px; border-left: 2px solid rgba(255,178,107,0.55); padding: 4px 0 4px 20px;">
+            <p style="margin: 0; font: 400 15px/1.75 Archivo, sans-serif; color: rgba(238,243,247,0.72); text-wrap: pretty;">One commenter, <span style="color: #ffb26b;">scandii</span>, doubted the GPU numbers I had published. They were right to. I re-measured, the original explanation did not survive contact with the benchmark, and the README was corrected the next day.</p>
+            <p style="margin: 12px 0 0; font: 400 10px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(238,243,247,0.35);">The most useful thing anyone said all week</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="track" data-screen-label="Track" style="position: relative;">
+    <div id="career-wrap" style="position: relative; height: 460vh;">
+      <div style="position: sticky; top: 0; height: 100vh; min-height: 560px; overflow: hidden; user-select: none;">
+        <div id="career-stage" style="position: absolute; inset: 0;"></div>
+        <div style="position: absolute; inset: 0; pointer-events: none; z-index: 2; background: radial-gradient(120% 90% at 50% 45%, rgba(5,7,10,0) 35%, rgba(5,7,10,0.55) 100%);"></div>
+        <div style="position: absolute; inset: 0; pointer-events: none; z-index: 3; background: radial-gradient(58% 54% at 50% 46%, rgba(5,7,10,0.93) 0%, rgba(5,7,10,0.8) 42%, rgba(5,7,10,0.34) 78%, rgba(5,7,10,0.1) 100%), linear-gradient(0deg, rgba(5,7,10,0.72) 0%, rgba(5,7,10,0) 30%);"></div>
+
+        <div style="position: absolute; inset: 0; z-index: 4; pointer-events: none;">
+
+          <div style="position: absolute; left: clamp(24px, 5vw, 96px); top: 96px; display: flex; align-items: baseline; gap: 14px;">
+            <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">04</span>
+            <span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span>
+            <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">track</span>
+            <span style="margin-left: 10px; font: 500 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; color: #ffb26b;"><span data-cyear>2021</span></span>
+          </div>
+
+          <div data-ccap="0" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 clamp(24px, 7vw, 150px) 118px; opacity: 0; will-change: transform, opacity;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap;"><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: #ffb26b;">2025 — present</span><span style="width: 22px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(238,243,247,0.5);">Doxel · Remote, USA</span></div>
+            <div style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; text-transform: uppercase; color: #7fe3ff; margin-bottom: 18px;">Software Engineer III</div>
+            <h3 style="margin: 0 0 24px; max-width: 22ch; font: 600 clamp(30px, 5.4vw, 74px)/0.96 Archivo, sans-serif; letter-spacing: -0.04em;">Nobody handed me<br />the spec.</h3>
+            <p style="margin: 0; max-width: 60ch; font: 400 clamp(15px, 1.2vw, 18px)/1.72 Archivo, sans-serif; color: rgba(238,243,247,0.72); text-wrap: pretty;">I look for the workflow quietly costing us money, build the case with numbers, win the buy-in, and then own it end to end. The browser BIM review tool and the AI incident platform both started as proposals nobody asked for — and both are in production.</p>
+          </div>
+          <div data-ccap="1" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 clamp(24px, 7vw, 150px) 118px; opacity: 0; will-change: transform, opacity;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap;"><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: #ffb26b;">2023 — 2025</span><span style="width: 22px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(238,243,247,0.5);">Doxel · Remote, USA</span></div>
+            <div style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; text-transform: uppercase; color: #7fe3ff; margin-bottom: 18px;">Software Engineer II</div>
+            <h3 style="margin: 0 0 24px; max-width: 22ch; font: 600 clamp(30px, 5.4vw, 74px)/0.96 Archivo, sans-serif; letter-spacing: -0.04em;">Two years learning<br />where things break.</h3>
+            <p style="margin: 0; max-width: 60ch; font: 400 clamp(15px, 1.2vw, 18px)/1.72 Archivo, sans-serif; color: rgba(238,243,247,0.72); text-wrap: pretty;">The unglamorous half, on purpose: security posture for SOC 2, Kubernetes right-sized against real pipeline load, redundant deployments deleted, containers where there were none. This is the stretch that taught me what a platform actually costs to keep alive.</p>
+          </div>
+          <div data-ccap="2" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 clamp(24px, 7vw, 150px) 118px; opacity: 0; will-change: transform, opacity;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap;"><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: #ffb26b;">2021 — 2023</span><span style="width: 22px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(238,243,247,0.5);">GeeksforGeeks · Noida</span></div>
+            <div style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; text-transform: uppercase; color: #7fe3ff; margin-bottom: 18px;">SDE II</div>
+            <h3 style="margin: 0 0 24px; max-width: 22ch; font: 600 clamp(30px, 5.4vw, 74px)/0.96 Archivo, sans-serif; letter-spacing: -0.04em;">Real traffic, and a<br />hard lesson in reuse.</h3>
+            <p style="margin: 0; max-width: 60ch; font: 400 clamp(15px, 1.2vw, 18px)/1.72 Archivo, sans-serif; color: rgba(238,243,247,0.72); text-wrap: pretty;">A microservice backend under genuine load — XSS-class holes closed, latency down a quarter. Then the call I still quote in design reviews: build the architecture around the compiler that already existed rather than writing one. Less to own, less to go wrong.</p>
+          </div>
+          <div data-ccap="3" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 clamp(24px, 7vw, 150px) 118px; opacity: 0; will-change: transform, opacity;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap;"><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; color: #ffb26b;">Apr — Nov 2021</span><span style="width: 22px; height: 1px; background: rgba(255,178,107,0.5);"></span><span style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(238,243,247,0.5);">Disecto · Remote, India</span></div>
+            <div style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; text-transform: uppercase; color: #7fe3ff; margin-bottom: 18px;">Backend Engineer</div>
+            <h3 style="margin: 0 0 24px; max-width: 22ch; font: 600 clamp(30px, 5.4vw, 74px)/0.96 Archivo, sans-serif; letter-spacing: -0.04em;">Where it started:<br />ship, then ship again.</h3>
+            <p style="margin: 0; max-width: 60ch; font: 400 clamp(15px, 1.2vw, 18px)/1.72 Archivo, sans-serif; color: rgba(238,243,247,0.72); text-wrap: pretty;">Backend engineer on a team spread across three cities, integrating third-party calling services and leading delivery on two projects. Ten features out the door in seven months — the habit everything since has been built on.</p>
+          </div>
+          <div data-cstat="0" style="position: absolute; left: 0; right: 0; bottom: 58px; display: flex; justify-content: center; align-items: flex-start; gap: clamp(30px, 6vw, 88px); padding: 0 24px; opacity: 0;">
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">2</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">platforms shipped</div></div>
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">3</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">engineers mentored</div></div>
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">Q1 2026</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">company AI award</div></div>
+          </div>
+          <div data-cstat="1" style="position: absolute; left: 0; right: 0; bottom: 58px; display: flex; justify-content: center; align-items: flex-start; gap: clamp(30px, 6vw, 88px); padding: 0 24px; opacity: 0;">
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">+35%</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">security posture</div></div>
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">−10%</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">cloud compute</div></div>
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">3</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">deployments removed</div></div>
+          </div>
+          <div data-cstat="2" style="position: absolute; left: 0; right: 0; bottom: 58px; display: flex; justify-content: center; align-items: flex-start; gap: clamp(30px, 6vw, 88px); padding: 0 24px; opacity: 0;">
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">−25%</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">API latency</div></div>
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">30–40%</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">less cost &amp; complexity</div></div>
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">25,000</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">member community</div></div>
+          </div>
+          <div data-cstat="3" style="position: absolute; left: 0; right: 0; bottom: 58px; display: flex; justify-content: center; align-items: flex-start; gap: clamp(30px, 6vw, 88px); padding: 0 24px; opacity: 0;">
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #7fe3ff;">10</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">features shipped</div></div>
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #eef3f7;">2</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">projects led</div></div>
+            <div style="text-align: center;"><div style="font: 600 clamp(22px, 2.4vw, 32px)/1 Archivo, sans-serif; letter-spacing: -0.03em; color: #ffb26b;">3</div><div style="margin-top: 9px; font: 400 9px/1.5 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,243,247,0.45);">cities, one team</div></div>
+          </div>
+
+          <div style="position: absolute; left: clamp(24px, 5vw, 96px); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 13px;">
+            <div data-crail="0" style="display: flex; align-items: center; gap: 10px; opacity: 0.28; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">2026</span></div>
+            <div data-crail="1" style="display: flex; align-items: center; gap: 10px; opacity: 0.28; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">2024</span></div>
+            <div data-crail="2" style="display: flex; align-items: center; gap: 10px; opacity: 0.28; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">2022</span></div>
+            <div data-crail="3" style="display: flex; align-items: center; gap: 10px; opacity: 0.28; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">2021</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width: 1180px; margin: 0 auto; padding: 90px clamp(24px, 5vw, 96px) 120px;">
+      <div data-rise style="display: grid; grid-template-columns: 180px 1fr; gap: 40px; padding-top: 30px; border-top: 1px solid rgba(238,243,247,0.12); opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <div style="font: 400 10px/1.7 'JetBrains Mono', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(238,243,247,0.4);">2017 — 2021</div>
+        <div>
+          <h3 style="margin: 0 0 4px; font: 500 18px/1.3 Archivo, sans-serif; letter-spacing: -0.02em;">B.Tech (Honours), Computer Science</h3>
+          <p style="margin: 0; font: 400 14px/1.6 Archivo, sans-serif; color: rgba(238,243,247,0.5);">Dr. A.P.J. Abdul Kalam Technical University, Uttar Pradesh, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" data-screen-label="Stack" style="position: relative; padding: 40px 0 130px;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 96px);">
+      <div data-rise style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 44px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">05</span>
+        <span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span>
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">stack</span>
+      </div>
+      <h2 data-rise style="margin: 0 0 64px; max-width: 22ch; font: 600 clamp(32px, 4.6vw, 64px)/1 Archivo, sans-serif; letter-spacing: -0.04em; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s;">The tools, by layer.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(238,243,247,0.11);">
+        <div data-rise style="background: #05070a; padding: 34px 30px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+          <div style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; text-transform: uppercase; color: #7fe3ff; margin-bottom: 22px;">AI / LLM systems</div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font: 400 14px/1.4 Archivo, sans-serif; color: rgba(238,243,247,0.74);">
+            <span>LLM agents (Claude)</span><span>Agent tool design</span><span>MCP servers</span><span>Vision-language models</span><span>Prompt engineering</span><span>LLM evaluation &amp; cost optimisation</span>
+          </div>
+        </div>
+        <div data-rise style="background: #05070a; padding: 34px 30px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s;">
+          <div style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; text-transform: uppercase; color: #7fe3ff; margin-bottom: 22px;">Cloud &amp; infrastructure</div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font: 400 14px/1.4 Archivo, sans-serif; color: rgba(238,243,247,0.74);">
+            <span>GCP · AWS</span><span>Kubernetes (GKE)</span><span>Terraform · Helm</span><span>Docker</span><span>Airflow</span><span>GitHub Actions CI/CD</span>
+          </div>
+        </div>
+        <div data-rise style="background: #05070a; padding: 34px 30px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s;">
+          <div style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; text-transform: uppercase; color: #7fe3ff; margin-bottom: 22px;">Backend &amp; data</div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font: 400 14px/1.4 Archivo, sans-serif; color: rgba(238,243,247,0.74);">
+            <span>FastAPI · REST APIs</span><span>Microservices</span><span>PostgreSQL / PostGIS</span><span>Redis</span><span>ETL pipelines</span><span>Datadog · PagerDuty</span>
+          </div>
+        </div>
+        <div data-rise style="background: #05070a; padding: 34px 30px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.18s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.18s;">
+          <div style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.28em; text-transform: uppercase; color: #7fe3ff; margin-bottom: 22px;">Languages · frontend · 3D</div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font: 400 14px/1.4 Archivo, sans-serif; color: rgba(238,243,247,0.74);">
+            <span>Python · Go · SQL</span><span>TypeScript / JavaScript</span><span>React · Vite</span><span>three.js</span><span>WebGL / WebGPU rendering</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-rise style="margin-top: 84px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <div style="border-top: 1px solid rgba(255,178,107,0.4); padding-top: 26px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+            <h3 style="margin: 0; font: 600 20px/1.3 Archivo, sans-serif; letter-spacing: -0.02em;">Exceptional Innovation and Advancement in AI</h3>
+            <span style="flex: none; font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #ffb26b;">Q1 2026</span>
+          </div>
+          <p style="margin: 12px 0 0; font: 400 14px/1.65 Archivo, sans-serif; color: rgba(238,243,247,0.55);">Company-wide award at Doxel, recognising the AI platform work — including the incident-investigation platform.</p>
+        </div>
+        <div style="border-top: 1px solid rgba(255,178,107,0.4); padding-top: 26px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+            <h3 style="margin: 0; font: 600 20px/1.3 Archivo, sans-serif; letter-spacing: -0.02em;">Smart India Hackathon — Winner</h3>
+            <span style="flex: none; font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #ffb26b;">Jan 2020</span>
+          </div>
+          <p style="margin: 12px 0 0; font: 400 14px/1.65 Archivo, sans-serif; color: rgba(238,243,247,0.55);">Led development of a tool to analyse and visualise CDR and IPDR data, winning a national team-based hackathon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="position: relative; padding: 130px 0 0; border-top: 1px solid rgba(238,243,247,0.1);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 96px);">
+      <div data-rise style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 44px; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);">
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: #7fe3ff;">06</span>
+        <span style="width: 34px; height: 1px; background: rgba(127,227,255,0.4);"></span>
+        <span style="font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.34em; color: rgba(238,243,247,0.55); text-transform: uppercase;">contact</span>
+      </div>
+      <h2 data-rise style="margin: 0 0 28px; max-width: 24ch; font: 300 clamp(38px, 7vw, 108px)/0.92 Archivo, sans-serif; letter-spacing: -0.05em; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.06s;">Got a layer that<br /><span style="font-weight: 600; color: #7fe3ff;">needs holding up?</span></h2>
+      <p data-rise style="margin: 0 0 64px; max-width: 52ch; font: 400 16px/1.75 Archivo, sans-serif; color: rgba(238,243,247,0.62); text-wrap: pretty; opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s;">AI platforms, distributed backends, cloud architecture, or the security work nobody volunteers for. I'm happy to talk through any of it.</p>
+      <div data-rise style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(238,243,247,0.11); opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.18s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.18s;">
+        <a href="mailto:ritvikr1605@gmail.com" style="background: #05070a; padding: 30px 26px; display: block;">
+          <div style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(238,243,247,0.4); margin-bottom: 14px;">Email</div>
+          <div style="font: 500 15px/1.4 Archivo, sans-serif; overflow-wrap: break-word;">ritvikr1605@gmail.com</div>
+        </a>
+        <a href="https://linkedin.com/in/ritvikdayal" style="background: #05070a; padding: 30px 26px; display: block;">
+          <div style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(238,243,247,0.4); margin-bottom: 14px;">LinkedIn</div>
+          <div style="font: 500 15px/1.4 Archivo, sans-serif;">in/ritvikdayal</div>
+        </a>
+        <a href="https://github.com/ritvikdayal" style="background: #05070a; padding: 30px 26px; display: block;">
+          <div style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(238,243,247,0.4); margin-bottom: 14px;">GitHub</div>
+          <div style="font: 500 15px/1.4 Archivo, sans-serif;">ritvikdayal</div>
+        </a>
+        <a href="Ritvik-Dayal-Resume.pdf" style="background: #05070a; padding: 30px 26px; display: block;">
+          <div style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(238,243,247,0.4); margin-bottom: 14px;">Résumé</div>
+          <div style="font: 500 15px/1.4 Archivo, sans-serif;">PDF ↓</div>
+        </a>
+      </div>
+      <div style="margin-top: 100px; padding: 30px 0 44px; border-top: 1px solid rgba(238,243,247,0.1); display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: center;">
+        <span style="font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(238,243,247,0.35);">Ritvik Dayal · Noida, Uttar Pradesh, India</span>
+        <span style="font: 400 9px/1.6 'JetBrains Mono', monospace; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(238,243,247,0.25);">Built in the browser · WebGL</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var reveal = function (el) { el.style.opacity = '1'; el.style.transform = 'none'; };
+  var rises = Array.prototype.slice.call(document.querySelectorAll('[data-rise]'));
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      for (var i = 0; i < es.length; i++) {
+        if (es[i].isIntersecting) { reveal(es[i].target); io.unobserve(es[i].target); }
+      }
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    rises.forEach(function (el) { io.observe(el); });
+    setTimeout(function () { rises.forEach(reveal); }, 4000);
+  } else {
+    rises.forEach(reveal);
+  }
+
+  var navs = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+  var secs = navs.map(function (a) { return document.getElementById(a.getAttribute('data-nav')); })
+                 .filter(Boolean);
+  var bar = document.querySelector('[data-page-bar]');
+  var navwrap = document.querySelector('[data-navwrap]');
+
+  function onScroll() {
+    var y = window.scrollY || 0;
+    if (navwrap) {
+      var on = y > window.innerHeight * 0.55;
+      navwrap.style.opacity = on ? '1' : '0';
+      navwrap.style.pointerEvents = on ? 'auto' : 'none';
+    }
+    var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if (bar) bar.style.transform = 'scaleX(' + Math.min(1, y / max) + ')';
+    var active = -1;
+    secs.forEach(function (s, i) {
+      if (s.getBoundingClientRect().top < window.innerHeight * 0.42) active = i;
+    });
+    navs.forEach(function (a, i) {
+      a.style.color = i === active ? '#7fe3ff' : 'rgba(238,243,247,0.34)';
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
 </html>
