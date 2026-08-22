@@ -71,7 +71,9 @@
   }
   /* the trailing dash reads as a tick on a vertical rail, as clutter in a bar */
   [data-navwrap] [data-nav] > span + span { display: none !important; }
-  body { padding-bottom: 52px; }
+  /* the bar itself grows by env(safe-area-inset-bottom), so the reserve
+     has to as well or the tail of the last section sits behind it */
+  body { padding-bottom: calc(52px + env(safe-area-inset-bottom, 0px)); }
 
   /* Deliberately not !important. Paragraphs that carry their own inline
      max-width keep it; only the ones with none pick this up, which is the
@@ -101,11 +103,35 @@
   [data-cap] p { max-width: 62ch !important; }
 
   /* pills are 22px tall, well under a comfortable touch target */
-  section a[style*="padding: 5px 10px"] {
+  section a[style*="padding: 5px 10px"],
+  section a[style*="padding:5px 10px"] {
     min-height: 38px !important;
     display: inline-flex !important;
     align-items: center !important;
   }
+}
+
+/* ---------- hero furniture that has nowhere to go ---------- */
+@media (max-width: 900px) {
+  /* The HUD sits at right:130 bottom:92 and the captions were moved to
+     bottom:112, so they overlap by ~22px — and the engine drives both from
+     the same focus value, so they are always lit together. */
+  [data-hudwrap] { display: none !important; }
+
+  /* The progress meter is a 180px column pinned to the right margin, which
+     lands across the centred title card. On tablets there is room for it in
+     the top corner. */
+  [data-meter] {
+    right: 14px !important;
+    top: 86px !important;
+    transform: none !important;
+  }
+}
+
+/* ---------- overlays inside 100vh stages, which a body reserve cannot help ---------- */
+@media (max-width: 1024px) {
+  [data-cstat] { bottom: calc(58px + env(safe-area-inset-bottom, 0px)) !important; }
+  [data-end-card] { padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important; }
 }
 
 /* ---------- phones ---------- */
@@ -134,11 +160,16 @@
 
   /* the brand spans almost the whole viewport and mix-blend-mode: difference
      inverts it over body copy; the scroll handler fades it out instead */
-  [data-r="brandrole"], [data-r="branddiv"] { display: none !important; }
+  [data-brandrole], [data-branddiv] { display: none !important; }
 
   /* desktop section rhythm is ~150px, which is a lot of empty phone screen */
   [data-r="sec"] { padding-top: 74px !important; padding-bottom: 68px !important; }
   [data-r="card"] { padding: 20px 17px !important; }
+
+  /* Even in the corner the 180px meter still crosses the title block at
+     phone widths. The numbered layer captions (01 the tap, 02 the order ...)
+     already say where you are, so the meter goes rather than the copy. */
+  [data-meter] { display: none !important; }
 
   /* 460vh of sticky scrub is punishing on a phone */
   #career-wrap { height: 300vh !important; }
@@ -176,7 +207,22 @@
 }
 /* ==== end responsive layer ==== */
 </style>
-<script>window.__UTH_CONFIG = { grain: 0.055, speed: 1, labels: !window.matchMedia('(max-width: 700px)').matches };</script>
+<script>
+window.__UTH_CONFIG = { grain: 0.055, speed: 1, labels: true };
+(function () {
+  /* The engine reads cfg().labels every frame, so this has to track the
+     viewport rather than being sampled once at parse time — otherwise
+     narrowing past the breakpoint and widening again leaves the labels off
+     for the rest of the session, with no position ever written to them.
+     Matched to 900px, the same width at which the CSS hides the layer, so
+     the engine is not projecting 28 hidden elements every frame. */
+  var mq = window.matchMedia('(max-width: 900px)');
+  var sync = function () { window.__UTH_CONFIG.labels = !mq.matches; };
+  sync();
+  if (mq.addEventListener) mq.addEventListener('change', sync);
+  else if (mq.addListener) mq.addListener(sync);
+})();
+</script>
 <script type="module" src="./hero-engine.js"></script>
 <script type="module" src="./career-engine.js"></script>
 </head>
@@ -192,8 +238,8 @@
   <div data-brand style="position: fixed; left: 40px; top: 34px; z-index: 50; display: flex; align-items: center; gap: 13px; mix-blend-mode: difference;">
     <span style="width: 7px; height: 7px; background: #7fe3ff; animation: uthBlink 2.4s steps(1) infinite;"></span>
     <span data-r="micro" style="font: 500 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.3em; text-transform: uppercase; color: #eef3f7;">Ritvik Dayal</span>
-    <span data-r="branddiv" style="width: 1px; height: 11px; background: rgba(238,243,247,0.3);"></span>
-    <span data-r="brandrole" data-r="micro" style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(238,243,247,0.55);">Senior Software Engineer</span>
+    <span data-branddiv style="width: 1px; height: 11px; background: rgba(238,243,247,0.3);"></span>
+    <span data-brandrole data-r="micro" style="font: 400 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(238,243,247,0.55);">Senior Software Engineer</span>
   </div>
 
   <div data-navwrap style="position: fixed; right: 40px; top: 50%; transform: translateY(-50%); z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; opacity: 0; transition: opacity 0.5s;">
@@ -304,14 +350,14 @@
         <div data-rail="6" style="display: flex; align-items: center; gap: 10px; opacity: 0.3; transition: opacity 0.3s, transform 0.3s;"><span style="width: 14px; height: 1px; background: #7fe3ff;"></span><span data-r="micro" style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: #cfe9f7;">07</span></div>
       </div>
 
-      <div style="position: absolute; right: 96px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px;">
+      <div data-meter style="position: absolute; right: 96px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 12px;">
         <div data-r="micro" style="font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.45);"><span data-pct>00</span></div>
         <div style="position: relative; width: 1px; height: 180px; background: rgba(238,243,247,0.14);">
           <div data-bar style="position: absolute; inset: 0; background: linear-gradient(#7fe3ff, #ffb26b); transform-origin: top; transform: scaleY(0);"></div>
         </div>
       </div>
 
-      <div style="position: absolute; right: 130px; bottom: 92px; text-align: right;">
+      <div data-hudwrap style="position: absolute; right: 130px; bottom: 92px; text-align: right;">
         <div data-r="micro" data-hud="0" style="opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 01 · surface<br /><span style="color: #7fe3ff;">5 layers · 1.2 M lit dots</span></div>
         <div data-r="micro" data-hud="1" style="position: absolute; right: 0; bottom: 0; opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 02 · kernel<br /><span style="color: #7fe3ff;">312 programs · 1 referee</span></div>
         <div data-r="micro" data-hud="2" style="position: absolute; right: 0; bottom: 0; opacity: 0; font: 400 10px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.2em; color: rgba(238,243,247,0.5); text-transform: uppercase;">layer 03 · transport<br /><span style="color: #7fe3ff;">4 wrappers · 1500 bytes</span></div>
