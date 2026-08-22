@@ -661,11 +661,17 @@ function boot(host) {
     S.tgt = cl(S.tgt + d, 0, MAX);
     if (!S.started) { S.started = true; document.documentElement.setAttribute('data-uth-started', '1'); }
   };
+  /* Below this width the page drives the sequence: the hero pins and a
+     spacer supplies the scroll length, so intercepting input here would
+     fight the page rather than advance it. Checked per event so a
+     rotation or resize switches modes without a reload. */
+  const compact = matchMedia('(max-width: 900px)');
   const surf = host.parentElement || host;
   const atTop = () => (window.scrollY || document.documentElement.scrollTop || 0) <= 2;
   const fwd = () => atTop() && S.tgt < MAX - 0.004;
   const back = () => atTop() && S.tgt > 0.004;
   window.addEventListener('wheel', (e) => {
+    if (compact.matches) return;
     const d = e.deltaY;
     if (d > 0 ? fwd() : back()) {
       e.preventDefault();
@@ -675,12 +681,13 @@ function boot(host) {
   let ty = null;
   window.addEventListener('touchstart', (e) => { ty = e.touches[0].clientY; }, { passive: true });
   window.addEventListener('touchmove', (e) => {
-    if (ty === null) return;
+    if (compact.matches || ty === null) return;
     const y = e.touches[0].clientY, d = ty - y;
     if (d > 0 ? fwd() : back()) { nudge(d * 0.006); e.preventDefault(); }
     ty = y;
   }, { passive: false });
   addEventListener('keydown', (e) => {
+    if (compact.matches) return;
     const k = e.key;
     if ((k === 'ArrowDown' || k === 'PageDown' || k === ' ') && fwd()) { nudge(0.34); e.preventDefault(); }
     if ((k === 'ArrowUp' || k === 'PageUp') && back()) { nudge(-0.34); e.preventDefault(); }
@@ -690,6 +697,7 @@ function boot(host) {
     S.tpx = ((e.clientX - r.left) / r.width - 0.5) * 2;
     S.tpy = ((e.clientY - r.top) / r.height - 0.5) * 2;
   });
+  window.__UTH_MAX = MAX;
   window.__UTH_GOTO = (i) => { S.tgt = cl(i, 0, MAX); S.started = true; document.documentElement.setAttribute('data-uth-started', '1'); };
 
   /* --------------------------------------------------------- dom binding */

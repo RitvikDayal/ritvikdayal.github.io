@@ -111,6 +111,18 @@
   }
 }
 
+/* ---------- hero: scroll instead of swipe interception ---------- */
+@media (max-width: 900px) {
+  /* The sequence used to intercept touch: while the page sat at the top,
+     touchmove was preventDefault'd and each swipe advanced a layer rather
+     than scrolling, so roughly four swipes went by with the page apparently
+     refusing to move. The hero pins instead and the spacer below supplies
+     the scroll length, so the layers advance on an ordinary scroll — the
+     same arrangement the career stage already uses. */
+  [data-hero-pin] > section { position: sticky !important; top: 0 !important; }
+  [data-hero-scroll] { height: 300vh; }
+}
+
 /* ---------- hero furniture that has nowhere to go ---------- */
 @media (max-width: 900px) {
   /* The HUD sits at right:130 bottom:92 and the captions were moved to
@@ -251,7 +263,8 @@ window.__UTH_CONFIG = { grain: 0.055, speed: 1, labels: true };
     <a data-r="micro" data-nav="contact" href="#contact" style="display: flex; align-items: center; gap: 10px; font: 400 9px/1 'JetBrains Mono', monospace; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(238,243,247,0.34); transition: color 0.3s;"><span>Contact</span><span style="width: 16px; height: 1px; background: currentColor;"></span></a>
   </div>
 
-  <section data-screen-label="Hero sequence" style="position: relative; width: 100%; height: 100vh; min-height: 580px; overflow: hidden; cursor: crosshair; user-select: none;">
+    <div data-hero-pin>
+<section data-screen-label="Hero sequence" style="position: relative; width: 100%; height: 100vh; min-height: 580px; overflow: hidden; cursor: crosshair; user-select: none;">
     <div id="uth-stage" style="position: absolute; inset: 0;"></div>
     <div style="position: absolute; inset: 0; pointer-events: none; z-index: 2; background: radial-gradient(120% 90% at 50% 45%, rgba(5,7,10,0) 35%, rgba(5,7,10,0.55) 100%);"></div>
     <div style="position: absolute; inset: 0; pointer-events: none; z-index: 3; background: linear-gradient(100deg, rgba(5,7,10,0.82) 0%, rgba(5,7,10,0.45) 26%, rgba(5,7,10,0) 52%), linear-gradient(0deg, rgba(5,7,10,0.6) 0%, rgba(5,7,10,0) 34%);"></div>
@@ -391,6 +404,8 @@ window.__UTH_CONFIG = { grain: 0.055, speed: 1, labels: true };
 
     </div>
   </section>
+    <div data-hero-scroll aria-hidden="true"></div>
+  </div>
 
   <section data-r="sec" id="who" data-screen-label="Who" style="position: relative; padding: 150px 0 130px;">
     <div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 96px);">
@@ -936,7 +951,23 @@ window.__UTH_CONFIG = { grain: 0.055, speed: 1, labels: true };
   var brand = document.querySelector('[data-brand]');
   var phone = window.matchMedia('(max-width: 700px)');
 
+  var heroPin = document.querySelector('[data-hero-pin]');
+  var compact = window.matchMedia('(max-width: 900px)');
+
+  function driveHero() {
+    if (!compact.matches || !heroPin || !window.__UTH_GOTO) return;
+    var span = heroPin.offsetHeight - window.innerHeight;
+    if (span <= 0) return;
+    var p = -heroPin.getBoundingClientRect().top / span;
+    p = p < 0 ? 0 : p > 1 ? 1 : p;
+    /* leave the opening beat alone: __UTH_GOTO marks the sequence started,
+       which would cut the intro animation short at rest */
+    if (p < 0.004) return;
+    window.__UTH_GOTO(p * (window.__UTH_MAX || 6.72));
+  }
+
   function onScroll() {
+    driveHero();
     var y = window.scrollY || 0;
     if (navwrap) {
       var on = y > window.innerHeight * 0.55;
