@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ritvikdayal.github.io/featherwall/sitemap.xml
